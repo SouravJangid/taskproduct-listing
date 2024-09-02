@@ -22,14 +22,16 @@ const ProductListing = ({ products }) => {
 
     return (
         <div>
-            <div className="flex justify-between items-center mb-6 ">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-6 ">
                 <input
                     type="text"
                     placeholder="Search..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="border p-2 rounded"
+                    className="border p-2 rounded items-start justify-start flex"
                 />
+                <div className='flex space-x-4 md:space-x-11 mt-2'>
+
                 <select value={category} onChange={(e) => setCategory(e.target.value)} className="border p-2 rounded cursor-pointer">
                     <option value="">All Categories</option>
                     <option value="Footwear">Footwear</option>
@@ -43,6 +45,7 @@ const ProductListing = ({ products }) => {
                     <option value="asc">Price: Low to High</option>
                     <option value="desc">Price: High to Low</option>
                 </select>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
